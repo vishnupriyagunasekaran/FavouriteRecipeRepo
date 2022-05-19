@@ -14,6 +14,10 @@ import com.cooking.FavouriteRecipe.model.RecipeModelMapper;
 import com.cooking.FavouriteRecipe.model.RecipeResponse;
 import com.cooking.FavouriteRecipe.repository.RecipeRepository;
 
+/**
+ * RecipeService implemented to call the
+ * database and send the response to controller
+ */
 @Service
 public class RecipeService {
 	
@@ -23,7 +27,10 @@ public class RecipeService {
 	@Autowired
 	private RecipeModelMapper recipeModelMapper;
 	
-	
+	/**
+	 * This method is used to get all the recipes
+	 * @return This returns list of recipes
+	 */
 	public List<Recipe> getAllRecipes() {
 		List<RecipeEntity> recipesList = new ArrayList<>();
 		try {
@@ -37,7 +44,12 @@ public class RecipeService {
 	
 	}
 	
-	public RecipeResponse getRecipeById(Long recipeId) throws RecipeNotFoundException {
+	/**
+	 * This method is used to get the recipe for particular Id
+	 * @param recipeId This is the parameter to get the recipe
+	 * @return RecipeResponse This returns recipe details
+	 */
+	public RecipeResponse getRecipeById(Long recipeId) {
 		Optional<RecipeEntity> recipeEntity;
 		Recipe recipeModel = new Recipe();
 		try {
@@ -58,6 +70,11 @@ public class RecipeService {
 		return new RecipeResponse("Recipe Details for the recipeId: "+recipeId,recipeModel);
 	}
 	
+	/**
+	 * This method is used to add the recipe
+	 * @param recipeModel This is the parameter to add the recipe
+	 * @return RecipeResponse This returns the added recipe
+	 */
 	public RecipeResponse recipeAdd(Recipe recipeModel) {
 
 		RecipeEntity recipe = recipeModelMapper.convertModeltoEntity(recipeModel);
@@ -74,7 +91,13 @@ public class RecipeService {
 		return new RecipeResponse("Recipe Saved Successfully",recipeM);
 	}
 	
-	public RecipeResponse recipeUpdate(Long id, Recipe recipeModel) throws RecipeNotFoundException {
+	/**
+	 * This method is used to update the recipe
+	 * @param id This is the first parameter to update the recipe
+	 * @param recipeModel This is the second parameter to update the recipe
+	 * @return RecipeResponse This returns the updated recipe
+	 */
+	public RecipeResponse recipeUpdate(Long id, Recipe recipeModel) {
 		Optional<RecipeEntity> currentRecipe = recipeRepository.findById(id);
 		
 		
@@ -106,7 +129,12 @@ public class RecipeService {
 		
 	}
 	
-	public RecipeResponse deleteRecipe(Long recipeId) throws RecipeNotFoundException {
+	/**
+	 * This method to used to delete the recipe
+	 * @param recipeId This is the parameter to delete the recipeId
+	 * @return RecipeResponse This returns the deleted message
+	 */
+	public RecipeResponse deleteRecipe(Long recipeId) {
 		Optional<RecipeEntity> recipe;
 		try {
 			recipe= recipeRepository.findById(recipeId);

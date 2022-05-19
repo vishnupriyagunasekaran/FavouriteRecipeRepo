@@ -28,13 +28,18 @@ public class FavouriteRecipeExceptionHandler extends ResponseEntityExceptionHand
 
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
-
+    
     @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
     	ExceptionResponse exceptionBody = new ExceptionResponse("Input validation failed", ex.getMessage());
         return new ResponseEntity<>(exceptionBody, HttpStatus.BAD_REQUEST);
     }
     
+    /**
+     * This method is used to send as a response with expired jwt message
+     * @param ExpiredJwtException
+     * @return This returns the Bad request with exception details
+     */
     @ExceptionHandler(ExpiredJwtException.class)
     public ResponseEntity<Object> handleExpiredJwtException(ExpiredJwtException expiredJwtException) {
     	ExceptionResponse exceptionBody = new ExceptionResponse("JWT Token Expired", expiredJwtException.getMessage());
@@ -42,6 +47,11 @@ public class FavouriteRecipeExceptionHandler extends ResponseEntityExceptionHand
 
     }
 
+    /**
+     * This method is used to send as a response with serice exception message
+     * @param ServiceException
+     * @return This returns the Internal Server Error with exception details
+     */
     @ExceptionHandler(ServiceException.class)
     public ResponseEntity<Object> handlePersistFailureException(ServiceException ServiceException) {
     	ExceptionResponse exceptionBody = new ExceptionResponse("INTERNAL_SERVER_ERROR", ServiceException.getErrorMessage());
@@ -49,7 +59,11 @@ public class FavouriteRecipeExceptionHandler extends ResponseEntityExceptionHand
 
     }
 
-
+    /**
+     * This method is used to send as a response with recipe not found message
+     * @param recipeNotFoundException
+     * @return This returns the Not found with exception details
+     */
     @ExceptionHandler(RecipeNotFoundException.class)
     public ResponseEntity<Object> handleNoDataFoundException(RecipeNotFoundException recipeNotFoundException) {
     	ExceptionResponse exceptionBody = new ExceptionResponse("RECIPE NOT FOUND FOR THE SEARCH PARAMETER", recipeNotFoundException.getExceptionMessage());

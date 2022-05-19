@@ -25,6 +25,12 @@ public class JwtController {
    @Autowired
    private TokenManager tokenManager;
    
+   /**
+    * This method is used to login and get the token
+    * @param JwtRequestModel This is the parameter to get the token
+    * @return ResponseEntity This returns the valid token
+    * @throws Exception
+    */
    @PostMapping("/login")
    public ResponseEntity<JwtResponseModel> createToken(@RequestBody JwtRequestModel
    request) throws Exception {
