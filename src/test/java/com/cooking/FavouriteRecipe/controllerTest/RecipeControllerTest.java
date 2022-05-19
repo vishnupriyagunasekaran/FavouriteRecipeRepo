@@ -72,7 +72,7 @@ public class RecipeControllerTest {
 	@Description("Get All the Recipes and the status should be 200")
 	public void givenRequest_ForRecipes_thenReturn200() throws Exception{
 
-		ResultActions response = mockMvc.perform(get("/recipes/getAll")
+		ResultActions response = mockMvc.perform(get("/rest/favouriteRecipe/recipes")
 				.header("Authorization", "Bearer " + authJWTToken)
 				.contentType(MediaType.APPLICATION_JSON)
 				.accept(MediaType.APPLICATION_JSON));
@@ -85,7 +85,7 @@ public class RecipeControllerTest {
 	@Description("Given RecipeId, when getting the recipe details, then recipe details should return with 200")
     public void givenRecipeId_whenGetRecipe_thenReturn200() throws Exception{
         
-        ResultActions response = mockMvc.perform(get("/recipes/{id}", 1l)
+        ResultActions response = mockMvc.perform(get("/rest/favouriteRecipe/recipeId/{id}", 1l)
         		.header("Authorization", "Bearer " + authJWTToken)
         		.contentType(MediaType.APPLICATION_JSON)
 				.accept(MediaType.APPLICATION_JSON));
@@ -103,7 +103,7 @@ public class RecipeControllerTest {
 		ingredientsList.add("salt and 1 pound (450 g) of pasta");
 		Recipe model = new Recipe(2l,"pasta", true, "19‐05‐2022 09:39", "Season the beaten eggs well with salt and pepper",
                 ingredientsList, 2);
-		ResultActions response = mockMvc.perform(post("/recipes/add")
+		ResultActions response = mockMvc.perform(post("/rest/favouriteRecipe/recipe")
 				.header("Authorization", "Bearer " + authJWTToken)
 				.contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
@@ -122,7 +122,7 @@ public class RecipeControllerTest {
 		Recipe model = new Recipe(2l, "pasta", true, "19‐05‐2022 09:39", "Season the beaten eggs well with salt and pepper",
                 ingredientsList, 2);
 		
-		ResultActions response = mockMvc.perform(put("/recipes/update/{id}",1l)
+		ResultActions response = mockMvc.perform(put("/rest/favouriteRecipe/recipe/{id}",1l)
 				.header("Authorization", "Bearer " + authJWTToken)
 				.contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
@@ -137,7 +137,7 @@ public class RecipeControllerTest {
 	@Description("Given RecipeId, when deleting the recipe details, then details should delete with 200")
     public void givenRecipeId_whenDeleteRecipe_thenReturn200() throws Exception{
         
-		ResultActions response = mockMvc.perform(delete("/recipes/delete/"+1)
+		ResultActions response = mockMvc.perform(delete("/rest/favouriteRecipe/recipe/"+1)
 				.header("Authorization", "Bearer " + authJWTToken)
 				.contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON));

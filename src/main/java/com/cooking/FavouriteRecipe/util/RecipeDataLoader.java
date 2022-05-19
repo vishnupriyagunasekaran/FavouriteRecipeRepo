@@ -37,11 +37,9 @@ public class RecipeDataLoader implements ApplicationRunner{
 		ingredient1.setIngredientsList("salt and 1 pound (450 g) of pasta");
 		ingredientsList.add(ingredient1);
 		recipe1.setIngredientsList(ingredientsList);
-		recipe1.setInstructions("STEP 1 \n"+
+		recipe1.setInstructions(
 		"Season the beaten eggs well with salt and pepper. Heat the oil in a non stick frying pan over "+
-		"a medium low heat.\n STEP 2 \n Pour the eggs into the pan, tilt the pan ever so slightly from one "+
-		"side to another to allow the eggs to swirl and cover the surface of the pan completely. Let the mixture"+
-		"cook for about 20 seconds then scrape a line through the middle with a spatula. Serve it.Enjoy.");
+		"a medium low heat.");
 		recipeRepository.save(recipe1);
 		
 		

@@ -2,17 +2,30 @@ package com.cooking.FavouriteRecipe.model;
 
 import java.util.List;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 
 
 public class Recipe {
 
 	
 	private Long id;
+	
+	@NotBlank(message="Name should not be empty")
 	private String name;
+	@NotNull
 	private boolean veg; 
 	private String creationDateTime;
+	
+	@NotNull
+    @Min(value = 1, message = "Recipe should be served for atleast 1 people")
 	private int noofpeople;
+	@NotEmpty(message = "Instructions should not be empty")
 	private String instructions;
+	@NotEmpty(message = "IngredientsList should not be empty")
 	private List<String> ingredientsList;
 	
 	public Recipe()

@@ -20,36 +20,36 @@ import com.cooking.FavouriteRecipe.model.Recipe;
 import com.cooking.FavouriteRecipe.service.RecipeService;
 
 @RestController
-@RequestMapping("/recipes")
+@RequestMapping("/rest/favouriteRecipe")
 public class RecipeController {
 	
 	@Autowired
 	private RecipeService recipeService;
 	
-	@GetMapping(value = "/getAll", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/recipes", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> getRecipes()
 			throws RecipeNotFoundException {
 		return new ResponseEntity<>(recipeService.getAllRecipes(),HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/recipeId/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> getRecipeById(@PathVariable(value = "id") Long recipeId)
 			throws RecipeNotFoundException {
 		return new ResponseEntity<>(recipeService.getRecipeById(recipeId),HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/add" , produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> recipeAdd(@Valid @RequestBody Recipe recipeEntity) {
-		return new ResponseEntity<>(recipeService.recipeAdd(recipeEntity),HttpStatus.CREATED);
+	@PostMapping(value = "/recipe" , produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> recipeAdd(@Valid @RequestBody Recipe recipeModel) {
+		return new ResponseEntity<>(recipeService.recipeAdd(recipeModel),HttpStatus.CREATED);
 		
 	}	
 	
-	@PutMapping(value = "/update/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "/recipe/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> recipeUpdate(@PathVariable("id") Long id,@Valid @RequestBody Recipe recipe) throws RecipeNotFoundException {
 		return new ResponseEntity<>(recipeService.recipeUpdate(id, recipe),HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value = "/recipe/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> deleteRecipe(@PathVariable("id") Long id) throws RecipeNotFoundException {
 		
 		return new ResponseEntity<>(recipeService.deleteRecipe(id),HttpStatus.OK);

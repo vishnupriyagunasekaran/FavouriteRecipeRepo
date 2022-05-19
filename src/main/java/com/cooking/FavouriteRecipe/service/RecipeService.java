@@ -1,5 +1,6 @@
 package com.cooking.FavouriteRecipe.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -24,27 +25,36 @@ public class RecipeService {
 	
 	
 	public List<Recipe> getAllRecipes() {
-		List<RecipeEntity> recipesList = recipeRepository.findAll();
+		List<RecipeEntity> recipesList = new ArrayList<>();
+		try {
+			recipesList = recipeRepository.findAll();
+		}catch (Exception e) {
+			throw new ServiceException(e.getMessage());
+		}
+		
 
 		return recipesList.stream().map(list -> recipeModelMapper.convertEntityToModel(list)).collect(Collectors.toList());
 	
 	}
 	
 	public RecipeResponse getRecipeById(Long recipeId) throws RecipeNotFoundException {
-		Optional<RecipeEntity> recipeEntity =  recipeRepository.findById(recipeId);
+		Optional<RecipeEntity> recipeEntity;
 		Recipe recipeModel = new Recipe();
+		try {
+			recipeEntity =  recipeRepository.findById(recipeId);
+		}
+		catch (Exception e) {
+			throw new ServiceException(e.getMessage());
+		}
 		if(recipeEntity.isPresent())
 		{
 			RecipeEntity recipe = recipeEntity.get();
 			recipeModel = recipeModelMapper.convertEntityToModel(recipe);
 		}
 		else
-			{
+		{
 			throw new RecipeNotFoundException("Recipe not found for the id :: " + recipeId);
 		}
-
-		
-
 		return new RecipeResponse("Recipe Details for the recipeId: "+recipeId,recipeModel);
 	}
 	
@@ -97,20 +107,25 @@ public class RecipeService {
 	}
 	
 	public RecipeResponse deleteRecipe(Long recipeId) throws RecipeNotFoundException {
-		Optional<RecipeEntity> recipe= recipeRepository.findById(recipeId);
-		 if(recipe.isPresent()) {
-			 try {
-				 recipeRepository.deleteById(recipeId);
-				 return new RecipeResponse("Recipe Deleted Successfully");
-			 }
-			 catch (Exception e) {
-				 throw new ServiceException(e.getMessage());
+		Optional<RecipeEntity> recipe;
+		try {
+			recipe= recipeRepository.findById(recipeId);
+		}catch (Exception e) {
+			throw new ServiceException(e.getMessage());
+		}
+		if(recipe.isPresent()) {
+			try {
+				recipeRepository.deleteById(recipeId);
+				return new RecipeResponse("Recipe Deleted Successfully");
 			}
-			 
-		 }
-		 else {
-			 throw new RecipeNotFoundException("Recipe not found to delete for the id :: " + recipeId);
-		 }
+			catch (Exception e) {
+				throw new ServiceException(e.getMessage());
+			}
+
+		}
+		else {
+			throw new RecipeNotFoundException("Recipe not found to delete for the id :: " + recipeId);
+		}
 		 
 	       		
 	}

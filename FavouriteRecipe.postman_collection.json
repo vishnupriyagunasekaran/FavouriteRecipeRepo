@@ -18,16 +18,16 @@
 	"requests": [
 		{
 			"id": "0e771c9d-1364-4230-e321-b85ebf9401af",
-			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg\n",
 			"headerData": [
 				{
 					"key": "Authorization",
-					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8082/recipes/1",
+			"url": "http://localhost:8082/rest/favouriteRecipe/recipeId/1",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -39,7 +39,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1652950774126,
+			"time": 1652965462072,
 			"name": "GetRecipe",
 			"description": "",
 			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
@@ -47,7 +47,7 @@
 		},
 		{
 			"id": "4bd84262-292f-a8cf-2462-2989f9d881c3",
-			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
@@ -57,12 +57,12 @@
 				},
 				{
 					"key": "Authorization",
-					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8082/recipes/update/1",
+			"url": "http://localhost:8082/rest/favouriteRecipe/recipe/1",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -74,7 +74,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1652950731006,
+			"time": 1652965533809,
 			"name": "UpdateRecipe",
 			"description": "",
 			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
@@ -83,16 +83,16 @@
 		},
 		{
 			"id": "7cc6fc38-2dda-65ef-7d3e-03c5e280af59",
-			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg\n",
 			"headerData": [
 				{
 					"key": "Authorization",
-					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8082/recipes/getAll",
+			"url": "http://localhost:8082/rest/favouriteRecipe/recipes",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -104,7 +104,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1652950751367,
+			"time": 1652965512950,
 			"name": "GetAllRecipes",
 			"description": "",
 			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
@@ -112,16 +112,16 @@
 		},
 		{
 			"id": "ab39f7af-3c8c-fc29-c958-ca2320a4bfec",
-			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg\n",
 			"headerData": [
 				{
 					"key": "Authorization",
-					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8082/recipes/delete/2",
+			"url": "http://localhost:8082/rest/favouriteRecipe/recipe/2",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -133,7 +133,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1652950723099,
+			"time": 1652965553915,
 			"name": "DeleteRecipe",
 			"description": "",
 			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
@@ -162,7 +162,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1652950589158,
+			"time": 1652965470763,
 			"name": "Login",
 			"description": "",
 			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
@@ -171,7 +171,7 @@
 		},
 		{
 			"id": "e6638fe1-07fb-5054-99a8-ee70294d8e99",
-			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
@@ -181,12 +181,12 @@
 				},
 				{
 					"key": "Authorization",
-					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1Mjk2NjMxNiwiaWF0IjoxNjUyOTY1NDE2fQ.fpSBTchX6c3Nv2-TS_EgfXMeHjABTqAoRKkPsnqAXUOmXG_aj4bnezgSQ_aThfpjpNQD-NgtcThU4c5WG-s7Gg",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8082/recipes/add",
+			"url": "http://localhost:8082/rest/favouriteRecipe/recipe",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -198,7 +198,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1652950741076,
+			"time": 1652965515031,
 			"name": "AddRecipe",
 			"description": "",
 			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
