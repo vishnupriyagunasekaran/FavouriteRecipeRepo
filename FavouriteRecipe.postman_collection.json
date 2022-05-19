@@ -1,0 +1,209 @@
+{
+	"id": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
+	"name": "FavouriteRecipe",
+	"description": "",
+	"order": [
+		"0e771c9d-1364-4230-e321-b85ebf9401af",
+		"7cc6fc38-2dda-65ef-7d3e-03c5e280af59",
+		"e6638fe1-07fb-5054-99a8-ee70294d8e99",
+		"4bd84262-292f-a8cf-2462-2989f9d881c3",
+		"ab39f7af-3c8c-fc29-c958-ca2320a4bfec",
+		"d0b2ee29-afea-9e72-970a-2fb744c2a671"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1652950419686,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "0e771c9d-1364-4230-e321-b85ebf9401af",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/recipes/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652950774126,
+			"name": "GetRecipe",
+			"description": "",
+			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
+			"responses": []
+		},
+		{
+			"id": "4bd84262-292f-a8cf-2462-2989f9d881c3",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/recipes/update/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652950731006,
+			"name": "UpdateRecipe",
+			"description": "",
+			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
+			"responses": [],
+			"rawModeData": "{\r\n \r\n \"ingredientsList\": [\r\n     \"1 tablespoon (4 grams) baking powder\",\r\n     \"2 cups (300 grams) fresh blueberries (one dry pint)\",\r\n     \"1 cup (225 grams) unsalted butter, at room temperature\"\r\n    \r\n  ],\r\n  \"instructions\": \"1 1/4 cups (150 grams) confectioners sugar (powdered or icing sugar), sifted\",\r\n  \"name\": \"Blueberry Pound Cake\",\r\n  \"noofpeople\": 1,\r\n  \"veg\": true\r\n}"
+		},
+		{
+			"id": "7cc6fc38-2dda-65ef-7d3e-03c5e280af59",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/recipes/getAll",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652950751367,
+			"name": "GetAllRecipes",
+			"description": "",
+			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
+			"responses": []
+		},
+		{
+			"id": "ab39f7af-3c8c-fc29-c958-ca2320a4bfec",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/recipes/delete/2",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652950723099,
+			"name": "DeleteRecipe",
+			"description": "",
+			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
+			"responses": []
+		},
+		{
+			"id": "d0b2ee29-afea-9e72-970a-2fb744c2a671",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652950589158,
+			"name": "Login",
+			"description": "",
+			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
+			"responses": [],
+			"rawModeData": "{\n\"username\" :\"admin\",\n\"password\" : \"admin\"\n}"
+		},
+		{
+			"id": "e6638fe1-07fb-5054-99a8-ee70294d8e99",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aXNobnUiLCJleHAiOjE2NTI5NDc1NzAsImlhdCI6MTY1Mjk0NjY3MH0.h5G9AeLSkveDt_S8Is4C5Z0rpn63ChkK2IbxMGaXdJ2fHg8EH3--uROZRzsrxC-W5DMEcRGIiLb61xJE8lTZQQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/recipes/add",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652950741076,
+			"name": "AddRecipe",
+			"description": "",
+			"collectionId": "80a938d1-7e3c-7847-dcee-35b67fe0731b",
+			"responses": [],
+			"rawModeData": "{\r\n \r\n \"ingredientsList\": [\r\n     \"1 tablespoon (4 grams) baking powder\",\r\n     \"2 cups (300 grams) fresh blueberries (one dry pint)\",\r\n     \"1 cup (225 grams) unsalted butter, at room temperature\"\r\n    \r\n  ],\r\n  \"instructions\": \"1 1/4 cups (150 grams) confectioners sugar (powdered or icing sugar), sifted\",\r\n  \"name\": \"Blueberry Pound Cake\",\r\n  \"noofpeople\": 1,\r\n  \"veg\": true\r\n}"
+		}
+	]
+}
