@@ -1,0 +1,10 @@
+com.cooking.FavouriteRecipe
+com.cooking.FavouriteRecipe.config
+com.cooking.FavouriteRecipe.controller
+com.cooking.FavouriteRecipe.controllerTest
+com.cooking.FavouriteRecipe.entity
+com.cooking.FavouriteRecipe.exception
+com.cooking.FavouriteRecipe.jwt
+com.cooking.FavouriteRecipe.model
+com.cooking.FavouriteRecipe.repository
+com.cooking.FavouriteRecipe.service

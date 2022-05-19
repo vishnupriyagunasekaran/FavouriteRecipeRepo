@@ -1,0 +1,50 @@
+package com.cooking.FavouriteRecipe.util;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
+import com.cooking.FavouriteRecipe.entity.IngredientsEntity;
+import com.cooking.FavouriteRecipe.entity.RecipeEntity;
+import com.cooking.FavouriteRecipe.repository.RecipeRepository;
+
+@Component
+public class RecipeDataLoader implements ApplicationRunner{
+	
+	@Autowired
+	private RecipeRepository recipeRepository;
+
+    
+    public RecipeDataLoader(RecipeRepository recipeRepository) {
+        this.recipeRepository = recipeRepository;
+    }
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		RecipeEntity recipe1= new RecipeEntity();
+		recipe1.setName("Pasta");
+		recipe1.setNoofpeople(2);
+		SimpleDateFormat createDateTime = new SimpleDateFormat("dd‐MM‐yyyy HH:mm");
+        Date date = new Date();
+		recipe1.setCreationDateTime(createDateTime.format(date));
+		recipe1.setVeg(true);
+		List<IngredientsEntity> ingredientsList = new ArrayList<>();
+		IngredientsEntity ingredient1 = new IngredientsEntity();
+		ingredient1.setIngredientsList("salt and 1 pound (450 g) of pasta");
+		ingredientsList.add(ingredient1);
+		recipe1.setIngredientsList(ingredientsList);
+		recipe1.setInstructions("STEP 1 \n"+
+		"Season the beaten eggs well with salt and pepper. Heat the oil in a non stick frying pan over "+
+		"a medium low heat.\n STEP 2 \n Pour the eggs into the pan, tilt the pan ever so slightly from one "+
+		"side to another to allow the eggs to swirl and cover the surface of the pan completely. Let the mixture"+
+		"cook for about 20 seconds then scrape a line through the middle with a spatula. Serve it.Enjoy.");
+		recipeRepository.save(recipe1);
+		
+		
+	}
+
+}
