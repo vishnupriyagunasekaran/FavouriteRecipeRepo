@@ -11,9 +11,9 @@ The different APIs supported are:
 ***
 
 ### Built With
-**Language:** Java
+**Language:** Java, version = 1.8
 
-**Framework**: SpringBoot
+**Framework**: SpringBoot, version = 2.6.7
 
 **Database**: In-Memory H2 Database
 

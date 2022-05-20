@@ -13,6 +13,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 import com.cooking.FavouriteRecipe.entity.IngredientsEntity;
 import com.cooking.FavouriteRecipe.entity.RecipeEntity;
+import com.cooking.FavouriteRecipe.model.Recipe;
+import com.cooking.FavouriteRecipe.model.RecipeModelMapper;
 import com.cooking.FavouriteRecipe.repository.RecipeRepository;
 
 @Component
@@ -22,6 +24,9 @@ public class RecipeDataLoader implements ApplicationRunner{
 	
 	@Autowired
 	private RecipeRepository recipeRepository;
+	
+	@Autowired
+	RecipeModelMapper recipeModelMapper;
 
     
     public RecipeDataLoader(RecipeRepository recipeRepository) {
@@ -30,22 +35,21 @@ public class RecipeDataLoader implements ApplicationRunner{
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		logger.info("Loading the data while starting the application");
-		RecipeEntity recipe1= new RecipeEntity();
+		Recipe recipe1= new Recipe();
 		recipe1.setName("Pasta");
 		recipe1.setNoofpeople(2);
 		SimpleDateFormat createDateTime = new SimpleDateFormat("dd‐MM‐yyyy HH:mm");
         Date date = new Date();
 		recipe1.setCreationDateTime(createDateTime.format(date));
 		recipe1.setVeg(true);
-		List<IngredientsEntity> ingredientsList = new ArrayList<>();
-		IngredientsEntity ingredient1 = new IngredientsEntity();
-		ingredient1.setIngredientsList("salt and 1 pound (450 g) of pasta");
-		ingredientsList.add(ingredient1);
+		List<String> ingredientsList = new ArrayList<>();
+		ingredientsList.add("salt and 1 pound (450 g) of pasta");
 		recipe1.setIngredientsList(ingredientsList);
 		recipe1.setInstructions(
 		"Season the beaten eggs well with salt and pepper. Heat the oil in a non stick frying pan over "+
 		"a medium low heat.");
-		recipeRepository.save(recipe1);
+		RecipeEntity recipeEntity = recipeModelMapper.convertModeltoEntity(recipe1);
+		recipeRepository.save(recipeEntity);
 		
 		
 	}
