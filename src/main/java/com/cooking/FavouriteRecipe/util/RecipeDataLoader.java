@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -16,6 +18,8 @@ import com.cooking.FavouriteRecipe.repository.RecipeRepository;
 @Component
 public class RecipeDataLoader implements ApplicationRunner{
 	
+	Logger logger = LoggerFactory.getLogger(RecipeDataLoader.class);
+	
 	@Autowired
 	private RecipeRepository recipeRepository;
 
@@ -25,6 +29,7 @@ public class RecipeDataLoader implements ApplicationRunner{
     }
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		logger.info("Loading the data while starting the application");
 		RecipeEntity recipe1= new RecipeEntity();
 		recipe1.setName("Pasta");
 		recipe1.setNoofpeople(2);

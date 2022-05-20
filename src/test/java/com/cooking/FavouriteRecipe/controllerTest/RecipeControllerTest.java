@@ -1,6 +1,7 @@
 package com.cooking.FavouriteRecipe.controllerTest;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -8,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Description;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
@@ -69,7 +69,7 @@ public class RecipeControllerTest {
     }
 	
 	@Test
-	@Description("Get All the Recipes and the status should be 200")
+	@DisplayName("Get All the Recipes and the status should be 200")
 	public void givenRequest_ForRecipes_thenReturn200() throws Exception{
 
 		ResultActions response = mockMvc.perform(get("/rest/favouriteRecipe/recipes")
@@ -82,7 +82,7 @@ public class RecipeControllerTest {
 	}
 	
 	@Test
-	@Description("Given RecipeId, when getting the recipe details, then recipe details should return with 200")
+	@DisplayName("Given RecipeId, when getting the recipe details, then recipe details should return with 200")
     public void givenRecipeId_whenGetRecipe_thenReturn200() throws Exception{
         
         ResultActions response = mockMvc.perform(get("/rest/favouriteRecipe/recipeId/{id}", 1l)
@@ -96,7 +96,7 @@ public class RecipeControllerTest {
     }
 	
 	@Test
-	@Description("Given RecipeDetails, when adding the recipe details, then details should add with 201")
+	@DisplayName("Given RecipeDetails, when adding the recipe details, then details should add with 201")
     public void givenRecipeId_whenAddRecipe_thenReturn401() throws Exception{
         
 		List<String> ingredientsList = new ArrayList<>();
@@ -114,7 +114,7 @@ public class RecipeControllerTest {
     }
 	
 	@Test
-	@Description("Given RecipeDetails, when adding the recipe details, then details should add with 201")
+	@DisplayName("Given RecipeDetails, when adding the recipe details, then details should add with 201")
     public void givenRecipeId_whenUpdateRecipe_thenReturn401() throws Exception{
         
 		List<String> ingredientsList = new ArrayList<>();
@@ -134,7 +134,7 @@ public class RecipeControllerTest {
 	
 	
 	@Test
-	@Description("Given RecipeId, when deleting the recipe details, then details should delete with 200")
+	@DisplayName("Given RecipeId, when deleting the recipe details, then details should delete with 200")
     public void givenRecipeId_whenDeleteRecipe_thenReturn200() throws Exception{
         
 		ResultActions response = mockMvc.perform(delete("/rest/favouriteRecipe/recipe/"+1)

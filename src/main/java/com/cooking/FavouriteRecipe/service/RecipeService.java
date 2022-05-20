@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cooking.FavouriteRecipe.entity.RecipeEntity;
@@ -20,6 +23,8 @@ import com.cooking.FavouriteRecipe.repository.RecipeRepository;
  */
 @Service
 public class RecipeService {
+	
+	Logger logger = LoggerFactory.getLogger(RecipeService.class);
 	
 	@Autowired
 	private RecipeRepository recipeRepository;
@@ -87,7 +92,7 @@ public class RecipeService {
 		}
 		
 		Recipe recipeM = recipeModelMapper.convertEntityToModel(recipeEntity);
-
+		logger.info("Recipe Saved successfully");
 		return new RecipeResponse("Recipe Saved Successfully",recipeM);
 	}
 	
@@ -120,7 +125,7 @@ public class RecipeService {
 			
 			
 			Recipe recipeM = recipeModelMapper.convertEntityToModel(recipeEntity);
-
+			logger.info("Recipe updated succesfully for the recipeId: {}",id);
 			return new RecipeResponse("Recipe Updated Successfully",recipeM);
 		}
 		else {
@@ -144,6 +149,7 @@ public class RecipeService {
 		if(recipe.isPresent()) {
 			try {
 				recipeRepository.deleteById(recipeId);
+				logger.info("Recipe deleted successfully for the id: {}",recipeId);
 				return new RecipeResponse("Recipe Deleted Successfully");
 			}
 			catch (Exception e) {

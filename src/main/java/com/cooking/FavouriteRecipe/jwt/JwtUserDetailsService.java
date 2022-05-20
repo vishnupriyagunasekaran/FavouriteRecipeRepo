@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class JwtUserDetailsService implements UserDetailsService { 
 
-	@Value("${un}")
+	@Value("${auth.un}")
 	private String un;
 
 

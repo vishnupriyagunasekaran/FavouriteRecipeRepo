@@ -56,7 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
          .authenticationEntryPoint((request, response, e) ->
          {
         	 response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-             response.getWriter().write(new ForbiddenResponse("ACCESS DENIED 403 Forbidden").toString());
+             response.getWriter().write(new ForbiddenResponse("ACCESS DENIED 403 Forbidden or token expired").toString());
          
          });
 	}

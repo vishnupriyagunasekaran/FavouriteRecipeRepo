@@ -2,6 +2,8 @@ package com.cooking.FavouriteRecipe.controller;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -25,6 +27,8 @@ import com.cooking.FavouriteRecipe.service.RecipeService;
 @RequestMapping("/rest/favouriteRecipe")
 public class RecipeController {
 	
+	Logger logger = LoggerFactory.getLogger(RecipeController.class);
+	
 	@Autowired
 	private RecipeService recipeService;
 	
@@ -34,6 +38,7 @@ public class RecipeController {
 	 */
 	@GetMapping(value = "/recipes", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> getRecipes() {
+		logger.info("Get All the Recipes");
 		return new ResponseEntity<>(recipeService.getAllRecipes(),HttpStatus.OK);
 	}
 
@@ -44,6 +49,7 @@ public class RecipeController {
 	 */
 	@GetMapping(value = "/recipeId/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> getRecipeById(@PathVariable(value = "id") Long recipeId) {
+		logger.info("Get Recipe Details for the recipeId: {}",recipeId);
 		return new ResponseEntity<>(recipeService.getRecipeById(recipeId),HttpStatus.OK);
 	}
 	
@@ -54,6 +60,7 @@ public class RecipeController {
 	 */
 	@PostMapping(value = "/recipe" , produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> recipeAdd(@Valid @RequestBody Recipe recipeModel) {
+		logger.info("Save the recipe");
 		return new ResponseEntity<>(recipeService.recipeAdd(recipeModel),HttpStatus.CREATED);
 		
 	}	
@@ -66,6 +73,7 @@ public class RecipeController {
 	 */
 	@PutMapping(value = "/recipe/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> recipeUpdate(@PathVariable("id") Long id,@Valid @RequestBody Recipe recipe) {
+		logger.info("Update the Recipe for the id: {}",id);
 		return new ResponseEntity<>(recipeService.recipeUpdate(id, recipe),HttpStatus.OK);
 	}
 	
@@ -76,6 +84,7 @@ public class RecipeController {
 	 */
 	@DeleteMapping(value = "/recipe/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> deleteRecipe(@PathVariable("id") Long id) {
+		logger.info("Delete the Recipe for the id: {}",id);
 		return new ResponseEntity<>(recipeService.deleteRecipe(id),HttpStatus.OK);
 	}
 	
